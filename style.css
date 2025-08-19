@@ -1,0 +1,183 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+
+        .calculator {
+            width: 360px;
+            background-color: #22252d;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .display {
+            padding: 25px 20px;
+            background-color: #2a2d37;
+            text-align: right;
+            position: relative;
+        }
+
+        .calculation {
+            min-height: 28px;
+            color: #a0a0a0;
+            font-size: 18px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .result {
+            color: white;
+            font-size: 42px;
+            font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1px;
+            padding: 20px;
+            background-color: #292d36;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 18px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #22252d;
+            color: white;
+            transition: all 0.2s;
+        }
+
+        button:active {
+            background-color: #2a2e3a;
+            transform: scale(0.95);
+        }
+
+        .operator {
+            color: #eb6665;
+        }
+
+        .function {
+            color: #26fed7;
+        }
+
+        .equals {
+            color: white;
+            background-color: #eb6665;
+            border-radius: 10px;
+        }
+
+        .equals:active {
+            background-color: #d45a59;
+        }
+
+        .history-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .history-panel.show {
+            transform: translateY(0);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .history-title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .close-history {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .history-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .history-calculation {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
+        .history-result {
+            color: white;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .clear-history {
+            display: block;
+            margin: 20px auto 10px;
+            padding: 8px 15px;
+            background-color: #eb6665;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .history-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: #a0a0a0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 400px) {
+            .calculator {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            button {
+                padding: 16px 5px;
+                font-size: 18px;
+            }
+            
+            .result {
+                font-size: 36px;
+            }
+        }
